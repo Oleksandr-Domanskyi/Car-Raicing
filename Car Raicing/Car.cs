@@ -10,10 +10,26 @@ namespace Car_Raicing
 {
     public abstract class Car
     {
+        public static int position = 0;
         protected int distance = 100;
         protected int Speed;
+
+        public delegate void Winner();
+        protected Winner _winner;
+           public void RegisterWinner(Winner winner)
+        {
+            _winner = winner;
+        }
+
         public abstract void Driving();
         public abstract bool Finish();
+        public static void Win()
+        {
+            if(position<=3)
+            System.Console.WriteLine($"Winner position: {position}");
+        }
+
+     
     }
     public class Autobas : Car
     {
@@ -23,16 +39,20 @@ namespace Car_Raicing
         }
         public override void Driving()
         {
-            Speed += 10;
+            Speed += 50;
             distance -= Speed;
-            if (Finish()) { System.Console.WriteLine($"Sport car rezult: Speed: {Speed}, Distance: 0"); }
+            if (Finish()) { position++;_winner(); System.Console.WriteLine($"Autobas car rezult: Speed: {Speed}, Distance: 0"); }
+            else
+            {
+                System.Console.WriteLine($"Autobas rezult: Speed: {Speed}, Distance: {distance}");
+            }
 
-            System.Console.WriteLine($"Autobas rezult: Speed: {Speed}, Distance: {distance}");
+
         }
 
         public override bool Finish()
         {
-            if (distance <= 0) { System.Console.WriteLine($"Autobus is finished\t Total speed: {Speed}"); return true; }
+            if (distance <= 0) return true;
             return false;
         }
     }
@@ -46,14 +66,17 @@ namespace Car_Raicing
         {
             Speed += 30;
             distance -= Speed;
-            if (Finish()) { System.Console.WriteLine($"Sport car rezult: Speed: {Speed}, Distance: 0"); }
-
-            Console.WriteLine($"LightCar rezult: Speed: {Speed}, Distance: {distance}");
+            if (Finish()) { position++; _winner(); System.Console.WriteLine($"Light car finished: Speed: {Speed}, Distance: 0"); }
+            else
+            {
+                Console.WriteLine($"LightCar rezult: Speed: {Speed}, Distance: {distance}");
+            }
         }
 
         public override bool Finish()
         {
-            if (distance <= 0) { Console.WriteLine($"Light Car is finished\t Total speed: {Speed}"); return true; }
+            if (distance <= 0) { distance = 0; return true; }
+
             return false;
         }
     }
@@ -67,15 +90,16 @@ namespace Car_Raicing
         {
             Speed += 40;
             distance -= Speed;
-            if (Finish() == true) { System.Console.WriteLine($"Sport car rezult: Speed: {Speed}, Distance: 0"); }
-
-            System.Console.WriteLine($"Sport car rezult: Speed: {Speed}, Distance: {distance}");
+            if (Finish() == true) { position++; _winner(); System.Console.WriteLine($"Sport car finished: Speed: {Speed}, Distance: 0"); }
+            else
+            {
+                System.Console.WriteLine($"Sport car rezult: Speed: {Speed}, Distance: {distance}");
+            }
         }
 
         public override bool Finish()
         {
-            if (distance <= 0) { distance = 0; System.Console.WriteLine($"Sport Car is finished\t Total speed: {Speed}"); return true; }
-            distance = 0;
+            if (distance <= 0) { distance = 0; return true; }
             return false;
         }
     }
