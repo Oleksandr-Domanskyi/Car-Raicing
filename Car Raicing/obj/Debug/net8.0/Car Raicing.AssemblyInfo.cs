@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Car Raicing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6716bdec36066a6addbe5c07c892ac1073bc8f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Car Raicing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Car Raicing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,3 +12,4 @@ C:\Users\FeZoX\Desktop\Car Raicing\Car Raicing\obj\Debug\net8.0\refint\Car Raici
 C:\Users\FeZoX\Desktop\Car Raicing\Car Raicing\obj\Debug\net8.0\Car Raicing.pdb
 C:\Users\FeZoX\Desktop\Car Raicing\Car Raicing\obj\Debug\net8.0\Car Raicing.genruntimeconfig.cache
 C:\Users\FeZoX\Desktop\Car Raicing\Car Raicing\obj\Debug\net8.0\ref\Car Raicing.dll
+C:\Users\FeZoX\Desktop\Car Raicing\Car Raicing\obj\Debug\net8.0\Car Raicing.sourcelink.json
