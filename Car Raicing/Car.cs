@@ -10,9 +10,9 @@ namespace Car_Raicing
 {
     public abstract class Car
     {
-        public static int position = 0;
-        protected int distance = 100;
-        protected int Speed;
+        protected static int position = 0;
+        public int distance = 100;
+        public int Speed;
 
         public delegate void Winner();
         protected Winner _winner;
@@ -27,9 +27,7 @@ namespace Car_Raicing
         {
             if(position<=3)
             System.Console.WriteLine($"Winner position: {position}");
-        }
-
-     
+        }   
     }
     public class Autobas : Car
     {
@@ -46,8 +44,6 @@ namespace Car_Raicing
             {
                 System.Console.WriteLine($"Autobas rezult: Speed: {Speed}, Distance: {distance}");
             }
-
-
         }
 
         public override bool Finish()

@@ -18,6 +18,7 @@ while (i <= 2)
 
     i++;
 }
+Console.ReadLine();
 static void HandlerWinner()
 {
     Car.Win();
